@@ -1,0 +1,34 @@
+[cmdline]
+0=OB
+1=shotwell Wallpaper.avif
+2=
+
+[input-def]
+0=*
+
+[Dir Hist New Right Panel]
+0=/home/tux/Downloads
+1=/home/tux
+2=/home/tux/Pictures
+
+[Dir Hist New Left Panel]
+0=/home/tux/go/pkg/mod
+1=/home/tux/go/pkg
+2=/home/tux/go
+3=/home/tux/.icons/default
+4=/home/tux/.icons
+5=/home/tux/.local/share
+6=/home/tux/.local
+7=/home/tux/.config
+8=/home/tux/.cert
+9=/home/tux/.cache
+10=/home/tux/Pictures
+11=/home/tux/Downloads/Telegram Desktop
+12=/home/tux/Downloads/Engineer
+13=/home/tux/Documents
+14=/home/tux
+15=/home/tux/Downloads
+
+[input2]
+0=/home/tux/Pictures/
+1=/home/tux/Documents/dotfiles/
