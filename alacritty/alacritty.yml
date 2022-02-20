@@ -1,3 +1,22 @@
+font:
+  normal:
+    family: JetBrains Mono
+    style: Medium
+
+  bold:
+    family: JetBrains Mono
+    style: Bold
+
+  italic:
+    family: JetBrains Mono
+    style: Italic
+
+  bold_italic:
+    family: JetBrains Mono
+    style: Bold Italic
+
+  size: 10
+
 colors:
   primary:
     background: '0x282828'
@@ -22,10 +41,4 @@ colors:
     magenta: '0xd3869b'
     cyan:    '0x89b482'
     white:   '0xdfbf8e'
-
-font:
-  normal:
-    family: JetBrains Mono
-    style: Medium
-  size: 10
 
