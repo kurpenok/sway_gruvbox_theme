@@ -1,16 +1,36 @@
-max-visible=1
-anchor=top-right
-font=JetBrains Mono
+sort=-time
 
-icons=1
-markup=1
+layer=overlay
 
-padding=3
+background-color=#282828
 
-background-color=#689d6a
-progress-color=#ebdbb2
-text-color=#1d2021
+width=300
 
-border-color=#ebdbb2
-border-size=3
+height=100
+
+border-size=1
+
+border-color=#dfbf8e
+
+icons=0
+
+default-timeout=3000
+
+ignore-timeout=1
+
+font=JetBrains Mono 10
+
+[urgency=low]
+border-color=#dfbf8e
+
+[urgency=normal]
+border-color=#dfbf8e
+
+[urgency=high]
+border-color=#ea6962
+default-timeout=0
+
+[category=mpd]
+default-timeout=3000
+group-by=category
 
