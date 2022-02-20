@@ -23,13 +23,15 @@ set $menu dmenu_path | wofi --show drun -I | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+output * bg /home/tux/Pictures/Wallpaper.jpg fill
 
 ### Idle configuration
 #
@@ -43,6 +45,11 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+exec swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 000000'
 
 ### Input configuration
 #
@@ -206,6 +213,11 @@ bindsym --to-code XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 bindsym --to-code XF86MonBrightnessUp exec brightnessctl set +16
 bindsym --to-code XF86MonBrightnessDown exec brightnessctl set 16-
 
+client.focused              #282828 #282828 #282828 #282828
+client.focused_inactive		#282828 #282828 #282828 #282828
+client.unfocused		    #282828 #282828 #282828 #282828
+client.urgent			    #282828 #282828 #282828 #282828
+
 # Status Bar:
 bar {
     swaybar_command waybar
@@ -217,7 +229,7 @@ exec mako
 
 gaps inner 10
 
-default_border pixel 1
+default_border pixel 4
 
 font pango:JetBrainsMono Medium 10
 
