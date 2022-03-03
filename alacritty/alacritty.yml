@@ -42,3 +42,6 @@ colors:
     cyan:    '0x89b482'
     white:   '0xdfbf8e'
 
+shell:
+  program: /usr/bin/fish
+
