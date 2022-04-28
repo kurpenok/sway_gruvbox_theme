@@ -20,3 +20,4 @@ Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 call plug#end()
 
 source ~/.local/share/nvim/plugged/awesome-vim-colorschemes/colors/gruvbox.vim
+
