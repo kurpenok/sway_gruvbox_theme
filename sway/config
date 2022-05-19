@@ -166,7 +166,7 @@ mode "resize" {
 bindsym --to-code $mod+r mode "resize"
 
 # LOCK SCREEN
-bindsym --to-code $mod+u exec --no-startup-id swaylock
+bindsym --to-code $mod+u exec --no-startup-id swaylock -f -c 000000
 
 # PULSEAUDIO VOLUME KEYS
 bindsym --to-code XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
