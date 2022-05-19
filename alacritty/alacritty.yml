@@ -43,5 +43,5 @@ colors:
     white:   '0xdfbf8e'
 
 shell:
-  program: /usr/bin/fish
+  program: /usr/bin/zsh
 
