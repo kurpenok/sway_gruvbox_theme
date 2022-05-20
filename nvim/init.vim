@@ -1,3 +1,5 @@
+set encoding=UTF-8
+
 :set number
 :set autoindent
 :set tabstop=4
@@ -11,13 +13,21 @@
 
 call plug#begin()
 
+Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/ryanoasis/vim-devicons'
-Plug 'https://github.com/neoclide/coc.nvim'
 Plug 'https://github.com/ap/vim-css-color'
-Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+
+Plug 'https://github.com/tc50cal/vim-terminal'
+Plug 'https://github.com/preservim/nerdtree'
+
+Plug 'https://github.com/neoclide/coc.nvim'
 
 call plug#end()
+
+nmap <F4> :Terminal zsh<CR>
+
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 source ~/.local/share/nvim/plugged/awesome-vim-colorschemes/colors/gruvbox.vim
 
