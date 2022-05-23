@@ -9,7 +9,7 @@ set $right l
 set $term alacritty
 
 # APPLICATION LAUNCHER
-set $menu wofi --show drun -I
+set $menu wofi --show drun -i
 
 # WALLPAPER
 output * bg wallpaper.jpg fill
