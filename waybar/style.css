@@ -50,7 +50,7 @@ window#waybar.hidden {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #cc241d;
+    color: #cc241d;
 }
 
 #clock {
