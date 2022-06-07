@@ -49,6 +49,10 @@ window#waybar.hidden {
     color: #98971a;
 }
 
+#battery.warning:not(.charging) {
+    color: #fabd2f;
+}
+
 #battery.critical:not(.charging) {
     color: #cc241d;
 }
