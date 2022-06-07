@@ -18,14 +18,11 @@ Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/ap/vim-css-color'
 
-Plug 'https://github.com/tc50cal/vim-terminal'
 Plug 'https://github.com/preservim/nerdtree'
 
 Plug 'https://github.com/neoclide/coc.nvim'
 
 call plug#end()
-
-nmap <F4> :Terminal zsh<CR>
 
 nnoremap <C-t> :NERDTreeToggle<CR>
 
