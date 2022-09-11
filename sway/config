@@ -198,6 +198,9 @@ default_border pixel 4
 # FONT
 font pango:JetBrainsMono Medium 10
 
+# CURSORS
+seat seat0 xcursor_theme phinger-cursors 16
+
 # SCREENSHOTS
 bindsym --to-code --to-code Print exec grim ~/Pictures/screen-"$(date +%s)".png
 bindsym --to-code --to-code $mod+Print exec grim -g "$(slurp)" ~/Pictures/screen-"$(date +%s)".png
