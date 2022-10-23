@@ -172,7 +172,7 @@ mode "resize" {
 bindsym --to-code $mod+r mode "resize"
 
 # LOCK SCREEN
-bindsym --to-code $mod+u exec --no-startup-id swaylock -f -c 000000
+bindsym --to-code $mod+u exec --no-startup-id swaylock --clock --indicator --grace 5 --indicator-radius 100 --ring-color 282828 --line-color ebdbb2 --key-hl-color ebdbb2 --screenshots --effect-scale 0.2 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e.%m.%Y" --timestr "%k:%M"
 
 # PULSEAUDIO VOLUME KEYS
 bindsym --to-code XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
@@ -184,7 +184,7 @@ bindsym --to-code XF86MonBrightnessUp exec brightnessctl set +16
 bindsym --to-code XF86MonBrightnessDown exec brightnessctl set 16-
 
 # WINDOW COLOR
-client.focused              #282828 #282828 #282828 #282828
+client.focused              #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
 client.focused_inactive		#282828 #282828 #282828 #282828
 client.unfocused		    #282828 #282828 #282828 #282828
 client.urgent			    #282828 #282828 #282828 #282828
@@ -193,7 +193,7 @@ client.urgent			    #282828 #282828 #282828 #282828
 gaps inner 10
 
 # WINDOW BORDER
-default_border pixel 4
+default_border pixel 2
 
 # FONT
 font pango:JetBrainsMono Medium 10
@@ -217,4 +217,3 @@ exec --no-startup-id nm-applet --indicator
 exec --no-startup-id mako
 
 include /etc/sway/config.d/*
-
