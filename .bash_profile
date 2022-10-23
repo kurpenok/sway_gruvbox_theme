@@ -16,3 +16,4 @@ if [ -z "$WAYLAND_DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
 	exec sway
 fi
 
+export _JAVA_AWT_WM_NONREPARENTING=1
