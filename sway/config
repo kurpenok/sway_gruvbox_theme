@@ -16,9 +16,9 @@ output * bg wallpaper.jpg fill
 
 # IDLE CONFIGURATION
 exec swayidle -w \
-    timeout 300 'swaylock -f -c 000000' \
+    timeout 300 'swaylock --clock --indicator --grace 5 --indicator-radius 100 --ring-color 282828 --line-color ebdbb2 --key-hl-color ebdbb2 --screenshots --effect-scale 0.2 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e.%m.%Y" --timestr "%k:%M"' \
     timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -f -c 000000'
+    before-sleep 'swaylock --clock --indicator --grace 5 --indicator-radius 100 --ring-color 282828 --line-color ebdbb2 --key-hl-color ebdbb2 --screenshots --effect-scale 0.2 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e.%m.%Y" --timestr "%k:%M"'
 
 # INPUT CONFIGURATION
 input * {
@@ -186,8 +186,8 @@ bindsym --to-code XF86MonBrightnessDown exec brightnessctl set 16-
 # WINDOW COLOR
 client.focused              #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
 client.focused_inactive		#282828 #282828 #282828 #282828
-client.unfocused		    #282828 #282828 #282828 #282828
-client.urgent			    #282828 #282828 #282828 #282828
+client.unfocused		   #282828 #282828 #282828 #282828
+client.urgent			   #282828 #282828 #282828 #282828
 
 # WINDOW GAPS
 gaps inner 10

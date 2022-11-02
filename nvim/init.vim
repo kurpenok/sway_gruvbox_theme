@@ -31,4 +31,3 @@ nnoremap <C-d> :NERDTreeToggle <CR>
 nnoremap <C-t> :terminal fish <CR>
 
 source ~/.local/share/nvim/plugged/awesome-vim-colorschemes/colors/gruvbox.vim
-

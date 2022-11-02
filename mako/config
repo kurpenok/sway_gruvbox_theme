@@ -33,4 +33,3 @@ default-timeout=0
 [category=mpd]
 default-timeout=3000
 group-by=category
-
