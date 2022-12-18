@@ -206,7 +206,7 @@ bindsym --to-code Print exec grim ~/Pictures/screen-"$(date +%s)".png
 bindsym --to-code $mod+Print exec grim -g "$(slurp)" ~/Pictures/screen-"$(date +%s)".png
 
 # VIDEO RECORD
-bindsym --to-code $mod+m exec wf-recorder --audio -f ~/Videos/recording-"$(date +%s)".mkv
+bindsym --to-code $mod+m exec wf-recorder --audio -f ~/Videos/recording-"$(date +%s)".mp4
 bindsym --to-code $mod+Shift+m exec pkill wf-recorder
 
 # STATUS BAR

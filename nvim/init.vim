@@ -1,3 +1,4 @@
+set clipboard+=unnamedplus
 set encoding=UTF-8
 
 set number
@@ -23,11 +24,18 @@ Plug 'https://github.com/tpope/vim-commentary'
 
 Plug 'https://github.com/neoclide/coc.nvim'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim'
+
 call plug#end()
 
-inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
 
-nnoremap <C-d> :NERDTreeToggle <CR>
-nnoremap <C-t> :terminal fish <CR>
+nnoremap <C-d> NERDTreeToggle <cr>
+nnoremap <C-t> terminal fish <cr>
+
+nnoremap ff <cmd> Telescope find_files <cr>
+nnoremap fg <cmd> Telescope live_grep <cr>
 
 source ~/.local/share/nvim/plugged/awesome-vim-colorschemes/colors/gruvbox.vim

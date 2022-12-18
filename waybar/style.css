@@ -41,10 +41,6 @@ window#waybar.hidden {
     color: #cc241d;
 }
 
-#network.disconnected {
-    color: #cc241d;
-}
-
 #battery.charging, #battery.plugged {
     color: #98971a;
 }
