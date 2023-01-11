@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 # TERMINAL
-set $term alacritty
+set $term foot
 
 # APPLICATION LAUNCHER
 set $menu wofi --show drun -i
