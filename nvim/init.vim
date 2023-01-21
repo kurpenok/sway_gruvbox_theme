@@ -18,6 +18,7 @@ Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'https://github.com/ap/vim-css-color'
+Plug 'https://github.com/morhetz/gruvbox'
 
 Plug 'https://github.com/preservim/nerdtree'
 Plug 'https://github.com/tpope/vim-commentary'
@@ -30,12 +31,23 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim'
 
 call plug#end()
 
-inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+let NERDTreeShowHidden=1
 
-nnoremap <C-d> NERDTreeToggle <cr>
-nnoremap <C-t> terminal fish <cr>
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+colorscheme gruvbox
+
+nnoremap <C-q> :q! <cr>
+nnoremap <C-s> :w! <cr>
+
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+nnoremap <silent><S-t> :tabnew <cr>
+
+nnoremap <F5> :NERDTreeToggle <cr>
 
 nnoremap ff <cmd> Telescope find_files <cr>
 nnoremap fg <cmd> Telescope live_grep <cr>
 
-source ~/.local/share/nvim/plugged/awesome-vim-colorschemes/colors/gruvbox.vim
+inoremap <expr><cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
