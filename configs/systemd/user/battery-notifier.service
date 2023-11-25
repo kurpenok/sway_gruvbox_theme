@@ -1,0 +1,9 @@
+[Install] 
+WantedBy=default.target
+
+[Service]
+Type=simple
+TimeoutSec=0
+ExecStart=bash /home/kurpenok/.scripts/battery-notifier/battery-notifier.sh
+ExecStop=
+Restart=on-failure
