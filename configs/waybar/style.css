@@ -37,10 +37,6 @@ window#waybar.hidden {
     color: #ebdbb2;
 }
 
-#pulseaudio.muted {
-    color: #cc241d;
-}
-
 #battery.charging, #battery.plugged {
     color: #98971a;
 }
