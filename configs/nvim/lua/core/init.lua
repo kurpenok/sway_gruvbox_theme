@@ -27,6 +27,8 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
 
+opt.scrolloff = 8
+
 -- Numbers
 opt.number = true
 opt.numberwidth = 2
