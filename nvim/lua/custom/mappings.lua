@@ -4,6 +4,14 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+
+    --  format with conform
+    ["<leader>fm"] = {
+      function()
+        require("conform").format()
+      end,
+      "formatting",
+    },
   },
   v = {
     [">"] = { ">gv", "indent" },
@@ -20,14 +28,6 @@ M.dap = {
     ["<leader>dr"] = {
       "<cmd> DapContinue <CR>",
       "Start or continue the debugger",
-    },
-    ["<leader>dw"] = {
-      function()
-        local widgets = require "dap.ui.widgets"
-        local sidebar = widgets.sidebar(widgets.scopes)
-        sidebar.open()
-      end,
-      "Open debugging sidebar",
     },
   },
 }
@@ -47,13 +47,11 @@ M.crates = {
   n = {
     ["<leader>rcu"] = {
       function()
-        require("crates").update_all_crates()
+        require("crates").upgrade_all_crates()
       end,
-      "Update rust crates",
+      "Upgrade all creates",
     },
   },
 }
-
--- more keybinds!
 
 return M

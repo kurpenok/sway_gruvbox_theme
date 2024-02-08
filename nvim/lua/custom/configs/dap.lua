@@ -10,7 +10,7 @@ dap.adapters["pwa-node"] = {
   },
 }
 
-for _, language in ipairs { "typescript", "javascript" } do
+for _, language in ipairs { "javascript", "typescript" } do
   dap.configurations[language] = {
     {
       type = "pwa-node",

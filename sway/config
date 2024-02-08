@@ -14,11 +14,10 @@ set $menu wofi --show drun -i
 # WALLPAPER
 output * bg wallpaper.jpg fill
 
-# IDLE CONFIGURATION
-exec swayidle -w \
-    timeout 300 'swaylock --clock --indicator --grace 5 --indicator-radius 100 --ring-color 282828 --line-color ebdbb2 --key-hl-color ebdbb2 --screenshots --effect-scale 0.2 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e.%m.%Y" --timestr "%k:%M"' \
-    timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock --clock --indicator --grace 5 --indicator-radius 100 --ring-color 282828 --line-color ebdbb2 --key-hl-color ebdbb2 --screenshots --effect-scale 0.2 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e.%m.%Y" --timestr "%k:%M"'
+output eDP-1 {
+    # For get display identifier: swaymsg -t get_outputs
+    scale 1.5
+}
 
 # INPUT CONFIGURATION
 input * {
@@ -28,13 +27,18 @@ input * {
 
 # TOUCHPAD CONFIGURATION
 # For get touchpad identifier: swaymsg -t get_inputs
-input 1267:12447:ELAN1200:00_04F3:309F_Touchpad {
+input 10182:480:GXT7863:00_27C6:01E0_Touchpad {
     tap enabled
     natural_scroll enabled
 }
 
-# KEY BINDINGS
+# IDLE CONFIGURATION
+exec swayidle -w \
+    timeout 300 'swaylock --clock --indicator --grace 5 --indicator-radius 100 --ring-color 282828 --line-color ebdbb2 --key-hl-color ebdbb2 --screenshots --effect-scale 0.2 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e.%m.%Y" --timestr "%k:%M"' \
+    timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock --clock --indicator --grace 5 --indicator-radius 100 --ring-color 282828 --line-color ebdbb2 --key-hl-color ebdbb2 --screenshots --effect-scale 0.2 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e.%m.%Y" --timestr "%k:%M"'
 
+# KEY BINDINGS
 # Basics:
 
     # Start a terminal
@@ -185,9 +189,9 @@ bindsym --to-code XF86MonBrightnessDown exec brightnessctl set 16-
 
 # WINDOW COLOR
 client.focused              #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
-client.focused_inactive		#282828 #282828 #282828 #282828
-client.unfocused		   #282828 #282828 #282828 #282828
-client.urgent			   #282828 #282828 #282828 #282828
+client.focused_inactive		  #282828 #282828 #282828 #282828
+client.unfocused		        #282828 #282828 #282828 #282828
+client.urgent			          #282828 #282828 #282828 #282828
 
 # WINDOW GAPS
 gaps inner 10
@@ -199,7 +203,7 @@ default_border pixel 2
 font pango:JetBrainsMono Medium 10
 
 # CURSORS
-seat seat0 xcursor_theme phinger-cursors 16
+seat seat0 xcursor_theme phinger-cursors 24
 
 # SCREENSHOTS
 bindsym --to-code Print exec grim ~/Pictures/screen-"$(date +%s)".png
