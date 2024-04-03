@@ -1,24 +1,23 @@
 local options = {
-  lsp_fallback = true,
-
   formatters_by_ft = {
-    sh = { "shfmt" },
-
     lua = { "stylua" },
 
+    sh = { "shfmt" },
+    bash = { "shfmt" },
+
+    c = { "clang_format" },
     cpp = { "clang_format" },
     rust = { "rustfmt" },
+
+    python = { "isort", "ruff_format" },
 
     html = { "prettier" },
     css = { "prettier" },
     javascript = { "prettier" },
     typescript = { "prettier" },
 
-    python = { "isort", "ruff_format" },
+    yaml = { "yamlfmt" },
   },
-
-  -- adding same formatter for multiple filetypes can look too much work for some
-  -- instead of the above code you could just use a loop! the config is just a table after all!
 
   format_on_save = {
     -- These options will be passed to conform.format()

@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 # TERMINAL
-set $term alacritty
+set $term foot
 
 # APPLICATION LAUNCHER
 set $menu wofi --show drun -i
@@ -16,7 +16,7 @@ output * bg wallpaper.jpg fill
 
 output eDP-1 {
     # For get display identifier: swaymsg -t get_outputs
-    scale 1.5
+    scale 1
 }
 
 # INPUT CONFIGURATION
@@ -27,7 +27,7 @@ input * {
 
 # TOUCHPAD CONFIGURATION
 # For get touchpad identifier: swaymsg -t get_inputs
-input 10182:480:GXT7863:00_27C6:01E0_Touchpad {
+input 1267:12447:ELAN1200:00_04F3:309F_Touchpad {
     tap enabled
     natural_scroll enabled
 }
@@ -188,10 +188,10 @@ bindsym --to-code XF86MonBrightnessUp exec brightnessctl set +16
 bindsym --to-code XF86MonBrightnessDown exec brightnessctl set 16-
 
 # WINDOW COLOR
-client.focused              #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
-client.focused_inactive		  #282828 #282828 #282828 #282828
-client.unfocused		        #282828 #282828 #282828 #282828
-client.urgent			          #282828 #282828 #282828 #282828
+client.focused			      #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
+client.focused_inactive		#282828 #282828 #282828 #282828
+client.unfocused		      #282828 #282828 #282828 #282828
+client.urgent			        #282828 #282828 #282828 #282828
 
 # WINDOW GAPS
 gaps inner 10
@@ -221,7 +221,13 @@ bar {
 # NETWORK MANAGER APPLET ACTIVATE
 exec --no-startup-id nm-applet --indicator
 
+# BLUETOOTH MANAGER APPLET ACTIVATE
+exec --no-startup-id blueman-applet
+
 # NOTIFICATIONS DAEMON ACTIVATE
 exec --no-startup-id mako
+
+# NIGHT LIGHT CONTROLLER ACTIVATE
+exec --no-startup-id wlsunset -S 06:00 -s 20:00 -d 1800 -t 4000 -T 6500
 
 include /etc/sway/config.d/*
