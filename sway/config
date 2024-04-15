@@ -14,8 +14,9 @@ set $menu wofi --show drun -i
 # WALLPAPER
 output * bg wallpaper.jpg fill
 
+# DISPLAY SCALE
+# For get display identifier: swaymsg -t get_outputs
 output eDP-1 {
-    # For get display identifier: swaymsg -t get_outputs
     scale 1
 }
 
@@ -188,10 +189,10 @@ bindsym --to-code XF86MonBrightnessUp exec brightnessctl set +16
 bindsym --to-code XF86MonBrightnessDown exec brightnessctl set 16-
 
 # WINDOW COLOR
-client.focused			      #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
-client.focused_inactive		#282828 #282828 #282828 #282828
-client.unfocused		      #282828 #282828 #282828 #282828
-client.urgent			        #282828 #282828 #282828 #282828
+client.focused             #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2
+client.focused_inactive    #282828 #282828 #282828 #282828
+client.unfocused           #282828 #282828 #282828 #282828
+client.urgent              #282828 #282828 #282828 #282828
 
 # WINDOW GAPS
 gaps inner 10
@@ -203,14 +204,14 @@ default_border pixel 2
 font pango:JetBrainsMono Medium 10
 
 # CURSORS
-seat seat0 xcursor_theme phinger-cursors 24
+seat seat0 xcursor_theme phinger-cursors-dark 24
 
 # SCREENSHOTS
-bindsym --to-code Print exec grim ~/Pictures/screen-"$(date +%s)".png
-bindsym --to-code $mod+Print exec grim -g "$(slurp)" ~/Pictures/screen-"$(date +%s)".png
+bindsym --to-code Print exec grim ~/pictures/screen-"$(date +%s)".png
+bindsym --to-code $mod+Print exec grim -g "$(slurp)" ~/pictures/screen-"$(date +%s)".png
 
 # VIDEO RECORD
-bindsym --to-code $mod+m exec wf-recorder --audio -f ~/Videos/recording-"$(date +%s)".mp4
+bindsym --to-code $mod+m exec wf-recorder --audio -f ~/videos/recording-"$(date +%s)".mp4
 bindsym --to-code $mod+Shift+m exec pkill wf-recorder
 
 # STATUS BAR
@@ -228,6 +229,6 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id mako
 
 # NIGHT LIGHT CONTROLLER ACTIVATE
-exec --no-startup-id wlsunset -S 06:00 -s 20:00 -d 1800 -t 4000 -T 6500
+exec --no-startup-id wlsunset -S 06:00 -s 18:00 -d 1800 -t 4000 -T 6500
 
 include /etc/sway/config.d/*
