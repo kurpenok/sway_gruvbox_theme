@@ -2,23 +2,23 @@
 
 #### Quick start
 
-Template config for neovim:
+Clone NvChad config for neovim:
 
 ```
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
 ```
 
-Start battery notifier service:
-
-```
-systemctl --user enable ~/.config/systemd/user/battery-notifier.service --now
-```
-
-Copy MC skin:
+Setup skin for midnight commander:
 
 ```
 mkdir -p ~/.local/share/mc/skins/
 cp mc/gruvbox256.ini ~/.local/share/mc/skins
+```
+
+Enable battery notifier service:
+
+```
+systemctl --user enable ~/.config/systemd/user/battery-notifier.service --now
 ```
 
 <!-- The configuration has been tested on Arch and Artix Linux. -->
