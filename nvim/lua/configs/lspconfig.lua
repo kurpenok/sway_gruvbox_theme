@@ -8,8 +8,6 @@ local servers = {
   "cmake",
   "rust_analyzer",
 
-  "pyright",
-
   "html",
   "cssls",
   "tsserver",
@@ -18,7 +16,6 @@ local servers = {
   "bashls",
   "jsonls",
   "yamlls",
-  "markdown_oxide",
 }
 
 -- lsps with default config
@@ -29,6 +26,20 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+local python_root_files = {
+  "main.py",
+  "setup.py",
+  "setup.cfg",
+  "pyproject.toml",
+  "requirements.txt",
+}
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  root_dir = lspconfig.util.root_pattern(python_root_files),
+}
 
 -- dotnet stuff
 local pid = vim.fn.getpid()
