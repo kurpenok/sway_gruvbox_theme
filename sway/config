@@ -1,5 +1,7 @@
+# LEADER KEY
 set $mod Mod4
 
+# ROW DIRECTION KEYS
 set $left h
 set $down j
 set $up k
@@ -11,23 +13,21 @@ set $term foot
 # APPLICATION LAUNCHER
 set $menu wofi --show drun -i
 
-# WALLPAPER
-output * bg wallpaper.jpg fill
-
-# DISPLAY SCALE
-# For get display identifier: swaymsg -t get_outputs
+# DISPLAY SCALING
 output eDP-1 {
     scale 1
 }
 
-# INPUT CONFIGURATION
+# DISPLAY WALLPAPER
+output * bg wallpaper.jpg fill
+
+# KEYBOARD CONFIGURATION
 input * {
     xkb_layout "us,ru"
     xkb_options "grp:win_space_toggle"
 }
 
 # TOUCHPAD CONFIGURATION
-# For get touchpad identifier: swaymsg -t get_inputs
 input 1267:12447:ELAN1200:00_04F3:309F_Touchpad {
     tap enabled
     natural_scroll enabled
@@ -35,11 +35,12 @@ input 1267:12447:ELAN1200:00_04F3:309F_Touchpad {
 
 # IDLE CONFIGURATION
 exec swayidle -w \
-    timeout 300 'swaylock --clock --indicator --grace 5 --indicator-radius 100 --ring-color 282828 --line-color ebdbb2 --key-hl-color ebdbb2 --screenshots --effect-scale 0.2 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e.%m.%Y" --timestr "%k:%M"' \
-    timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock --clock --indicator --grace 5 --indicator-radius 100 --ring-color 282828 --line-color ebdbb2 --key-hl-color ebdbb2 --screenshots --effect-scale 0.2 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e.%m.%Y" --timestr "%k:%M"'
+    timeout 300 'swaylock -f -c 282828' \
+    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f -c 282828'
 
 # KEY BINDINGS
+
 # Basics:
 
     # Start a terminal
@@ -177,7 +178,7 @@ mode "resize" {
 bindsym --to-code $mod+r mode "resize"
 
 # LOCK SCREEN
-bindsym --to-code $mod+u exec --no-startup-id swaylock --clock --indicator --grace 5 --indicator-radius 100 --ring-color 282828 --line-color ebdbb2 --key-hl-color ebdbb2 --screenshots --effect-scale 0.2 --effect-vignette 0.2:0.5 --effect-blur 4x2 --datestr "%a %e.%m.%Y" --timestr "%k:%M"
+bindsym --to-code $mod+u exec --no-startup-id swaylock -f -c 282828
 
 # PULSEAUDIO VOLUME KEYS
 bindsym --to-code XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
@@ -221,9 +222,6 @@ bar {
 
 # NETWORK MANAGER APPLET ACTIVATE
 exec --no-startup-id nm-applet --indicator
-
-# BLUETOOTH MANAGER APPLET ACTIVATE
-exec --no-startup-id blueman-applet
 
 # NOTIFICATIONS DAEMON ACTIVATE
 exec --no-startup-id mako
