@@ -3,8 +3,9 @@
     "position": "top",
     "height": 30,
     "spacing": 4,
-
-    "modules-left": ["sway/workspaces"],
+    "modules-left": [
+        "sway/workspaces"
+    ],
     "modules-center": [],
     "modules-right": [
         "pulseaudio",
@@ -19,7 +20,6 @@
         "tray",
         "clock"
     ],
-
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -34,11 +34,14 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
-
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
@@ -47,48 +50,61 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
-
     "memory": {
         "format": "{}% "
     },
-
     "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
     },
-
     "backlight": {
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
-
     "battery": {
         "states": {
             "good": 80,
             "warning": 20,
-            "critical": 15
+            "critical": 10
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
-
     "tray": {
         "spacing": 10
     },
-
     "clock": {
         "timezone": "Asia/Omsk",
         "format": "{:%Y-%m-%d - %H:%M}"

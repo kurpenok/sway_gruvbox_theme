@@ -35,9 +35,9 @@ input 1267:12447:ELAN1200:00_04F3:309F_Touchpad {
 
 # IDLE CONFIGURATION
 exec swayidle -w \
-    timeout 300 'swaylock -f -c 282828' \
+    timeout 300 'swaylock -e -f -K -L --inside-color 00000000 --inside-clear-color 00000000 -i $HOME/.config/sway/wallpaper.jpg --font "JetBrainsMono" --font-size 10' \
     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -f -c 282828'
+    before-sleep 'swaylock -e -f -K -L --inside-color 00000000 --inside-clear-color 00000000 -i $HOME/.config/sway/wallpaper.jpg --font "JetBrainsMono" --font-size 10'
 
 # KEY BINDINGS
 
@@ -178,7 +178,8 @@ mode "resize" {
 bindsym --to-code $mod+r mode "resize"
 
 # LOCK SCREEN
-bindsym --to-code $mod+u exec --no-startup-id swaylock -f -c 282828
+bindsym --to-code $mod+u exec --no-startup-id swaylock -e -f -K -L --inside-color 00000000 --inside-clear-color 00000000 \
+    -i $HOME/.config/sway/wallpaper.jpg --font "JetBrainsMono" --font-size 10
 
 # PULSEAUDIO VOLUME KEYS
 bindsym --to-code XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%

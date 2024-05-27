@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- format on save
+    event = 'BufWritePre',
     config = function()
       require "configs.conform"
     end,
@@ -13,44 +13,6 @@ return {
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
-  },
-
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        -- lua stuff
-        "lua-language-server",
-        "stylua",
-
-        -- c/cpp stuff
-        "clangd",
-        "clang-format",
-
-        -- rust stuff
-        "rust-analyzer",
-
-        -- dotnet stuff
-        "omnisharp",
-
-        -- debugger
-        "codelldb",
-
-        -- python stuff
-        "pyright",
-        "debugpy",
-        "ruff",
-
-        -- web stuff
-        "html-lsp",
-        "css-lsp",
-        "typescript-language-server",
-        "js-debug-adapter",
-        "eslint-lsp",
-        "prettier",
-        "deno",
-      },
-    },
   },
 
   {
